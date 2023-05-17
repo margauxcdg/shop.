@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-<<<<<<< HEAD
 Route::get('/shop', [App\Http\Controllers\ProductController::class, 'index'])->name('shop');
+Route::get('/shop/add', [ProductController::class, 'create'])->name('add');
+Route::post('/shop/store', [ProductController::class,'store'])->name('store');
+Route::get('/shop/edit/{id}', [ProductController::class, 'edit'])->name('edit');
+Route::post('/shop/update/{id}', [ProductController::class,'update'])->name('update');
+Route::delete('/shop/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
 
 
-=======
->>>>>>> 424cbd158906adc7fd738a7ee5632530864a2eb9
+
+
